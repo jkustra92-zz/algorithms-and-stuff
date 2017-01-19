@@ -44,8 +44,7 @@ console.log(score.a, score.b);
 // TIME CONVERSION
 //=================
 
-// two ways im going to do ths. convert into an object and then reassemble as a string at the end
-// keep it as a string and substring/splice the FUCK out of it.
+// strategy: substring/splice the FUCK out of this.
 
 // input
 var time = "07:05:45PM";
@@ -55,13 +54,38 @@ var time = "07:05:45PM";
 
 function timeConversion(time) {
   // console.log(time);
+  var newTime = getNewHours(time);
+  return removeAmOrPm(newTime);
+}
+
+function getNewHours(time) {
   var amOrPm = time.substring(8);
-  var hours = time.substring(0, 2);
+  // console.log(amOrPm);
+  var hours = parseInt(time.substring(0, 2));
+  // console.log(hours);
+  var newHours;
   
   if (hours === 12 && amOrPm === "AM") {
-    //something about changing it to 0
+    // if it's 12am, change the hours to zero
+    newHours = "00";
+    // console.log(newTime);
+  } else if (hours === 12 && amOrPm === "PM") {
+    // if it's 12pm, leave it alone
+    newHours = "12";
+  } else if (hours < 12 && amOrPm === "PM") {
+    // for any hours after noon, add 12 to them to convert
+    newHours = 12 + hours;
   }
+  return addNewHours(time, newHours);
+}
+
+function addNewHours(time, newHours) {
+  var newTime = newHours + time.slice(2);
+  return newTime;
+}
+
+function removeAmOrPm(newTime) {
+  return newTime.substring(0, 8)
 }
 
 console.log(timeConversion(time));
-
