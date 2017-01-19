@@ -89,3 +89,69 @@ function removeAmOrPm(newTime) {
 }
 
 console.log(timeConversion(time));
+
+//=====================
+// DAY ONE: DATA TYPES
+//=====================
+
+var i = 4;
+var d = 4.0;
+var s = "HackerRank ";
+
+//Declare second integer, double (floating point), and string variables
+var i1;
+var d1;
+var s1;
+
+// tried to dynamically assign these variables but i ain't shit and it didn't work.
+// will probably come back and rage at this later.
+
+// var variableNames = [i1, d1, s1];
+// var values = [12, 4.0, "is the best place to learn and practice coding!"];
+
+// variableNames.map(function(element, index){
+//   element = values[index];
+//   return element;
+// });
+
+// rage-quitting and just assigning them the old-fashioned way.
+
+var i1 = 12;
+var d1 = 4.0;
+var s1 = "is the best blah blah";
+
+// Print the sum of both integer variables on a new line.
+console.log(i1 + i);
+// Print the sum of the double variables on a new line.
+console.log((d1 + d).toFixed(1));
+// Concatenate and print the String variables on a new line
+// The 's' variable above should be printed first.
+console.log(s + s1);
+
+//====================
+// DAY TWO: OPERATORS
+//====================
+
+var mealCost = 12.00;
+var tipPercent = 20;
+var taxPercent = 8;
+
+function totalCostCalculator (mealCost, tipPercent, taxPercent) {
+  // okay. so first need to add the tax (just based on meal cost)
+  var tax = calculator(mealCost, taxPercent);
+  // then need to add the tip (also based on the total meal cost)
+  var tip = calculator(mealCost, tipPercent);
+  // round it to a whole number. because that's what this shit is asking for.
+  var totalCost = Math.round(mealCost + tax + tip);
+  // print out those results and stuff
+  console.log("the total cost of the meal is " + totalCost + " dollars");
+}
+
+// originally had two functions to calculate both tax and tip. 
+// but like. they're the same fucking thing. 
+// so why not just have one function, fam?
+function calculator(mealCost, percent) {
+  return mealCost * (percent/100);
+}
+
+totalCostCalculator(mealCost, tipPercent, taxPercent);
