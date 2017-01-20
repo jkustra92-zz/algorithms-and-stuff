@@ -155,3 +155,29 @@ function calculator(mealCost, percent) {
 }
 
 totalCostCalculator(mealCost, tipPercent, taxPercent);
+
+//=========================
+// DAY THREE: CONDITIONALS
+//=========================
+
+//instructions: 
+// "If is odd, print Weird
+// If is even and in the inclusive range of 2 to 5, print Not Weird
+// If is even and in the inclusive range of 6 to 20, print Weird
+// If is even and greater than 20, print Not Weird"
+
+var n = 22;
+
+if (n % 2 === 1) {
+// using modulus to check if the number is odd
+  console.log("weird");
+} else if ((n % 2 === 0) && (n >= 2 && n <= 5)) {
+  // also using it to check if even
+  console.log("not weird");
+} else if ((n % 2 === 0) && (n >= 6 && n <= 20)) {
+  //using "&&" for checking if number falls within the range
+  console.log("weird");
+} else if ((n % 2 === 0) && (n > 20)) {
+  console.log("not weird");
+}
+
