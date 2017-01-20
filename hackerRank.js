@@ -181,3 +181,73 @@ if (n % 2 === 1) {
   console.log("not weird");
 }
 
+//============
+// PLUS MINUS
+//============
+
+// task: output the fraction value of positive, negative, and instances of zero in a given array
+
+// took a similar approach to that one with the two people's scores because if it ain't broke...
+// except no global variables this time because i ain't about that (sometimes)
+
+function arrayFractions() {
+  var array = [-4, 3, -9, 0, 4, 1];
+  var totals = {
+    positives: 0,
+    negatives: 0,
+    zeros: 0
+  }
+  getTotals(array, totals);
+}
+
+function getTotals(arr, totals) {
+  arr.forEach(function(value){
+    if (value === 0) {
+      totals.zeros++
+    } else if (value > 0) {
+      totals.positives++
+    } else {
+      totals.negatives++
+    }
+  });
+  // yes, i am stringing functions together.
+  // yes, i can see where that gets tricky. but this is a three function problem, so we good.
+  getFractions(arr, totals);
+}
+
+function getFractions(arr, totals) {
+  // limit to 6 decimal places bc that's what the question calls for
+  var positives = (totals.positives/arr.length).toFixed(6);
+  var negatives = (totals.negatives/arr.length).toFixed(6);
+  var zeros = (totals.zeros/arr.length).toFixed(6);
+  
+  // print out that shit
+  console.log(positives);
+  console.log(negatives);
+  console.log(zeros);
+}
+
+arrayFractions();
+
+//===========
+// STAIRCASE
+//===========
+
+var n = 4;
+
+function pyramid(n) {
+  for (var i = 1; i <= n; i++) {
+    // .repeat is a string method which will "construct and return a new string which contains the specified number of copies of the string on which it was called, concatenated together."
+    // very useful, fam.
+    
+    // n - i will provide the number of leading spaces to the #
+    
+    // so on the first line, there will be 3 spaces and 1 "#"
+    // second line will have 2 spaces and 2 "#"
+    // you get the gist.
+    console.log(' '.repeat(n - i) + '#'.repeat(i));
+  }
+
+}
+
+pyramid(n);
