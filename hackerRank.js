@@ -251,3 +251,41 @@ function pyramid(n) {
 }
 
 pyramid(n);
+
+//==============================
+// DAY FOUR: INSTANCE VS. CLASS
+//==============================
+
+function Person(age) {
+  // first check if age is a valid number before setting.
+  this.setAge(age);
+  this.yearPasses = function() {
+    return this.age++
+  }
+  this.amIOld = function() {
+    if (this.age < 13) {
+      console.log("You are young");
+    } else if (this.age >= 13 && this.age < 18) {
+      console.log("You are a teenager");
+    } else {
+      console.log("You are old");
+    }
+  }
+}
+
+// member function called during constructor
+Person.prototype.setAge = function(age) {
+  if (age > 0) {
+    this.age = age;    
+  } else {
+    console.log("Age is not valid, setting age to 0.");
+    this.age = 0;
+  }
+};
+
+var jess = new Person(24);
+console.log(jess.age);
+jess.yearPasses();
+console.log(jess.age);
+jess.amIOld();
+
