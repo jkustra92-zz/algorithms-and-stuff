@@ -289,3 +289,20 @@ jess.yearPasses();
 console.log(jess.age);
 jess.amIOld();
 
+//===================
+// FIBONACCI NUMBERS
+//===================
+
+n = 4;
+
+function fibonacciNumbers(n) {
+  if (n === 0) {
+    return 0;
+  } else if (n === 1) {
+    return 1;
+  }
+  
+  return fibonacciNumbers(n - 1) + fibonacciNumbers(n - 2);
+}
+
+fibonacciNumbers(4);
