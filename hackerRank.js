@@ -306,3 +306,15 @@ function fibonacciNumbers(n) {
 }
 
 fibonacciNumbers(4);
+
+//==============
+// DAY 5: LOOPS
+//==============
+
+// task: given an integer "n", print its first 10 multiples.
+// print each on a new line in the form "n x i = result".
+
+n = 2;
+for(var i = 1; i <= 10; i++) {
+  console.log(n + " x " + i + " = " + n * i);
+}
