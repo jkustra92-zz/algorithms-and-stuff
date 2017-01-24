@@ -318,3 +318,30 @@ n = 2;
 for(var i = 1; i <= 10; i++) {
   console.log(n + " x " + i + " = " + n * i);
 }
+
+//====================
+// DAY 6: LETS REVIEW
+//====================
+
+var s = "Hacker";
+
+var odd = [];
+var even =[];
+
+function stringSeparation(str) {
+  for (var i = 0; i <= s.length - 1; i++) {
+    // if the current value of i is even...
+    if (i % 2 === 0) {
+      // console.log(str[i]);
+      even.push(str[i]);
+    // else if it's odd...
+    } else if (i % 2 === 1) {
+      // console.log(str[i]);
+      odd.push(s[i]);
+    }
+  } 
+  console.log(even.join(''), odd.join(''));
+}
+
+
+stringSeparation(s);
