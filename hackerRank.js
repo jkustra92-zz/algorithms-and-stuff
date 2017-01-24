@@ -345,3 +345,26 @@ function stringSeparation(str) {
 
 
 stringSeparation(s);
+
+//===============
+// DAY 7: ARRAYS
+//===============
+
+var array = [3, 2, 1, 4, 8];
+
+function reverseArray(arr) {
+  var array2 = [];
+  for (var i = 0; i < arr.length; i++) {
+    // unshift to add to the front of the array
+    array2.unshift(arr[i]);
+  }
+  // join with a space!
+  console.log(array2.join(" "));
+}
+
+reverseArray(array);
+
+
+//NOTE: this defeats the point of a challenge, but can also do ...
+
+console.log(array.reverse());
