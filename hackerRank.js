@@ -368,3 +368,28 @@ reverseArray(array);
 //NOTE: this defeats the point of a challenge, but can also do ...
 
 console.log(array.reverse());
+
+//==============================
+// DAY 8: DICTIONARIES AND MAPS
+//==============================
+
+var phoneBook = {
+  sam: 99912222,
+  tom: 11122222,
+  harry: 12299933
+}
+
+function lookUp(name) {
+  //just in case there's capitals
+  name = name.toLowerCase();
+  // for "key" in obj. aww yis.
+  if (name.toLowerCase() in phoneBook) {
+    console.log(name + " = " + phoneBook[name]);
+  } else {
+    console.log("Not found");
+  }
+}
+
+lookUp("sam");
+lookUp("SAM");
+lookUp("jess");
