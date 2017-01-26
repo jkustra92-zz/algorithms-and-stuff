@@ -393,3 +393,21 @@ function lookUp(name) {
 lookUp("sam");
 lookUp("SAM");
 lookUp("jess");
+
+//==================
+// DAY 9: RECURSION
+//==================
+
+n = 4;
+
+function factorial(n) {
+  // the factorial of 1 is just 1. so this is the limiting case.
+  if (n === 1) {
+    return 1;
+  } else {
+    // want to then get the result of the factorial function for the next value...
+    return n * factorial(n-1);
+  }
+}
+
+console.log(factorial(n));
